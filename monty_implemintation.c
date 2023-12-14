@@ -12,7 +12,7 @@ void r_nop(stack_t **head, unsigned int counter)
 }
 
 /**
- * implement - function executes the opcode
+ * execute - function executes the opcode
  * @stack: head linked list
  * @counter: integer
  * @file: poiner to monty

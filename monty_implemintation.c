@@ -19,7 +19,7 @@ void r_nop(stack_t **head, unsigned int counter)
  * @content: text
  * Return: none
  */
-int implement(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
 		{"push", r_push}, {"pall", r_pall}, {"pint", r_pint},

@@ -51,69 +51,21 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-void _push(stack_t **head, unsigned int number);
-void r_pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number);
-void r_pint(stack_t **stack, unsigned int line_number);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void f_stack(stack_t *head);
-void _pop(stack_t **head, unsigned int counter);
-void r_swap(stack_t **stack, unsigned int line_number);
-void free_dlistint(stack_t *head);
-void r_nop(stack_t **head, unsigned int counter);
+void addqu(stack_t **head, int i);
+void r_queue(stack_t **head, unsigned int counter);
+void r_stack(stack_t **head, unsigned int counter);
+void r_swap(stack_t **head, unsigned int counter);
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void r_pall(stack_t **head, unsigned int counter);
+void r_pop(stack_t **head, unsigned int counter);
+void r_push(stack_t **head, unsigned int counter);
+void addno(stack_t **head, int i);
+void free_stack(stack_t *head);
+void r_pint(stack_t **head, unsigned int co);
 void r_pchar(stack_t **head, unsigned int counter);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
-/**
- * execute - executes the opcode
- * @stack: head linked list
- * @counter: num
- * @file: poiner to monty file
- * @content: line conten
- * Return: none
- */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
-{
-	instruction_t opst[] = {
-		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-		{"pop", f_pop},
-		{"swap", f_swap},
-		{"add", f_add},
-		{"nop", f_nop},
-		{"sub", f_sub},
-		{"div", f_div},
-		{"mul", f_mul},
-		{"mod", f_mod},
-		{"pchar", f_pchar},
-		{"pstr", f_pstr},
-		{"rotl", f_rotl},
-		{"rotr", f_rotr},
-		{"queue", f_queue},
-		{"stack", f_stack},
-		{NULL, NULL}
-	};
-	unsigned int i = 0;
-	char *op;
-
-	op = strtok(content, " \n\t");
-	if (op && op[0] == '#')
-		return (0);
-	bus.arg = strtok(NULL, " \n\t");
-	while (opst[i].opcode && op)
-	{
-		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, counter);
-			return (0);
-		}
-		i++;
-	}
-	if (op && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
-		fclose(file);
-		free(content);
-		free_stack(*stack);
-		exit(EXIT_FAILURE); }
-	return (1);
-}
+void r_pstr(stack_t **head, unsigned int counter);
+void r_nop(stack_t **head, unsigned int counter);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 #endif/*MONTY.H*/

@@ -2,7 +2,7 @@
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
  * main - monty code interpreter
- * @argc: argument
+ * @argc: number of arguments
  * @argv: monty file location
  * Return: 0
  */
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		}
 		free(content);
 	}
-	f_stack(stack);
+	free_stack(stack);
 	fclose(file);
 	return (0);
 }

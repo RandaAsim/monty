@@ -61,7 +61,7 @@ void r_pop(stack_t **head, unsigned int counter);
 void r_push(stack_t **head, unsigned int counter);
 void addno(stack_t **head, int i);
 void free_stack(stack_t *head);
-void r_pint(stack_t **head, unsigned int co);
+void r_pint(stack_t **head, unsigned int counter);
 void r_pchar(stack_t **head, unsigned int counter);
 void r_pstr(stack_t **head, unsigned int counter);
 void r_nop(stack_t **head, unsigned int counter);

@@ -48,10 +48,11 @@ void r_pchar(stack_t **head, unsigned int counter)
 }
 /**
  * addqu - function add node
- * @i: num@head: head stack
+ * @n: num
+ * @head: head stack
  * Return: none
  */
-void addqu(stack_t **head, int i)
+void addqu(stack_t **head, int n)
 {
 	stack_t *new_node, *aux;
 
@@ -61,7 +62,7 @@ void addqu(stack_t **head, int i)
 	{
 		printf("Error\n");
 	}
-	new_node->n = i;
+	new_node->n = n;
 	new_node->next = NULL;
 	if (aux)
 	{

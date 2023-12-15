@@ -6,7 +6,7 @@
  * @counter: num
  * Return: none
  */
-void f_pall(stack_t **head, unsigned int counter)
+void r_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *tl;
 	(void)counter;
@@ -52,7 +52,7 @@ void r_pop(stack_t **head, unsigned int counter)
  */
 void r_push(stack_t **head, unsigned int counter)
 {
-	int i, j = 0, flag = 0;
+	int n, j = 0, flag = 0;
 
 	if (bus.arg)
 	{
@@ -74,18 +74,18 @@ void r_push(stack_t **head, unsigned int counter)
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
-	i = atoi(bus.arg);
+	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addno(head, i);
+		addno(head, n);
 	else
-		addqu(head, i);
+		addqu(head, n);
 }
 
 
 /**
  * addno - function add to the head 
  * @head: head stack
- * @i: num
+ * @n: num
  */
 void addno(stack_t **head, int n)
 {

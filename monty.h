@@ -59,7 +59,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void r_pall(stack_t **head, unsigned int counter);
 void r_pop(stack_t **head, unsigned int counter);
 void r_push(stack_t **head, unsigned int counter);
-void addno(stack_t **head, int i);
+void addno(stack_t **head, int n);
 void free_stack(stack_t *head);
 void r_pint(stack_t **head, unsigned int counter);
 void r_pchar(stack_t **head, unsigned int counter);

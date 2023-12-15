@@ -51,7 +51,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void addqu(stack_t **head, int i);
+void addqu(stack_t **head, int n);
 void r_queue(stack_t **head, unsigned int counter);
 void r_stack(stack_t **head, unsigned int counter);
 void r_swap(stack_t **head, unsigned int counter);

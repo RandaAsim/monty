@@ -87,7 +87,7 @@ void r_push(stack_t **head, unsigned int counter)
  * @head: head stack
  * @i: num
  */
-void addno(stack_t **head, int i)
+void addno(stack_t **head, int n)
 {
 
 	stack_t *new_node, *aux;
@@ -99,7 +99,7 @@ void addno(stack_t **head, int i)
 		exit(0); }
 	if (aux)
 		aux->prev = new_node;
-	new_node->n = i;
+	new_node->n = n;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	*head = new_node;
